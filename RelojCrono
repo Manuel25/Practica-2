@@ -1,0 +1,59 @@
+using System;
+using System.Threading; 
+
+namespace RelojCronom
+{
+	class Program
+	{
+		static void Main()
+		{
+			Int16 hora, min, seg;
+
+
+			Console.WriteLine(" \nMenu\n ");
+			Console.WriteLine(" 1.Reloj\n\n 2.Cronometro\n\n 3.Salir\n\n ");
+			int opc = Int16.Parse(System.Console.ReadLine());
+
+
+			switch (opc)
+			{
+				case 1:
+				for ( ; ; ) 
+				{
+					Console.Clear();
+					Console.WriteLine(" Reloj\n");
+					Console.WriteLine(DateTime.Now); 
+					Thread.Sleep(1000);
+
+				}
+
+				break;
+
+				case 2:
+				Console.Clear();
+
+				for (hora = 0; hora < 1000; hora++) 
+				{
+
+					for (min = 0; min < 60; min++) 
+					{
+						for (seg = 0; seg < 60; seg++) 
+						{
+							Console.WriteLine( " Cronometro\n\n\n0" + hora + ":0" + min+ ":0" + seg) ;
+							System.Threading.Thread.Sleep(1000); 
+							Console.Clear();
+
+						}
+					}
+				}
+
+
+				break;
+
+
+			}
+			Console.ReadLine();
+
+		}
+	}
+}
